@@ -13,10 +13,10 @@ let player = {
         return this.score;
     },
     addPoints(points){
-        return this.score + points;
+        this.score = this.score + points;
     },
     deductPoints(points){
-        return this.score - points;
+        this.score = this.score - points;
     }
 }
 
@@ -32,6 +32,7 @@ function Product(id, name, price, expiryDate) {
 const dateDiff = (date1, date2) => {
     let timeDiff = Math.abs(date1.getTime() - date2.getTime());
     let dateDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    return dateDiff;
 };
 
 // Here, use Object.defineProperty to create property - daysToExpire
